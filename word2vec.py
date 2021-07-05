@@ -25,5 +25,3 @@ embedding_model = Word2Vec(cleaned_tokens, vector_size=100,
 embedding_model.save('./models/word2VecModel.model')
 
 embedding_model = Word2Vec.load("./models/word2VecModel.model")
-print(embedding_model.wv.index_to_key())
-print(len(embedding_model.wv.key_to_index()))
