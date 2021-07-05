@@ -1,0 +1,15 @@
+cid_to_cat = {
+    "1": "Novel_Poem",
+    "170": "Economic_Management",
+    "1230": "Home_Cook_Beauty",
+    "1237": "Religion_Mysticism",
+    "517": "Art_Culture",
+    "76001": "Reference_Book",
+    "55890": "Health_Hobby_Leisure",
+    "987": "Science",
+    "74": "History",
+    "336": "Self_Improvement",
+    "1196": "Travel",
+    "55889": "Essay",
+    "656": "Humanities",
+}
