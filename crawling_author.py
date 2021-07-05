@@ -39,12 +39,12 @@ def crawler(cid, page_start, page_end):
             data = [(title, author) for title, author in zip(titles, authors)]
             df = pd.DataFrame(data, columns=["title", "author"])
             df_total = pd.concat([df_total, df], ignore_index=True)
-            df.to_csv(f"./crawling_data/{cid}_{saved_page}-{page}.csv", index=False)
+            # df.to_csv(f"./crawling_data/{cid}_{saved_page}-{page}.csv", index=False)
             titles = []
             authors = []
             saved_page = page + 1
 
-    df_total.to_csv(f"./crawling_data/{cid}_{page_start}-{page_end}.csv", index=False)
+    # df_total.to_csv(f"./crawling_data/{cid}_{page_start}-{page_end}.csv", index=False)
     driver.close()
     print(len(df_total))
     return df_total
