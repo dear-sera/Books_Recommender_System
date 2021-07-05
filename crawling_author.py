@@ -3,6 +3,7 @@ from multiprocessing import Pool
 import numpy as np
 import pandas as pd
 from selenium import webdriver
+import book_constant
 
 # from selenium.common.exceptions import NoSuchElementException
 
@@ -38,6 +39,7 @@ def crawler(cid, page_start, page_end):
         if (page % 50 == 0 and page != 0) or page == page_end:
             data = [(title, author) for title, author in zip(titles, authors)]
             df = pd.DataFrame(data, columns=["title", "author"])
+            df["category"] = book_constant.cid_to_cat[cid]
             df_total = pd.concat([df_total, df], ignore_index=True)
             # df.to_csv(f"./crawling_data/{cid}_{saved_page}-{page}.csv", index=False)
             titles = []
@@ -51,15 +53,16 @@ def crawler(cid, page_start, page_end):
 
 
 if __name__ == "__main__":
-    processes = 4
+    processes = 8
     page_total = 400
-    cid = 1
     page_step = np.linspace(1, page_total + 1, processes + 1, dtype=int)
-    inputs = [[cid, page_step[i], page_step[i + 1] - 1] for i in range(processes)]
+    inputs = []
+    for cid in book_constant.cid_to_cat.keys():
+        inputs += [[cid, page_step[i], page_step[i + 1] - 1] for i in range(processes)]
     print(inputs)
     pool = Pool(processes=processes)
     results = pool.starmap(crawler, inputs)
     pool.close()
     pool.join()
     df = pd.concat(results, ignore_index=True)
-    df.to_csv(f"./crawling_data/{cid}_{page_total}.csv", index=False)
+    df.to_csv(f"./crawling_data/author_{page_total}.csv", index=False)
