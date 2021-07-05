@@ -13,15 +13,13 @@ with open("./models/tfidf.pickle", "rb") as f:
 
 # 추천 함수 생성
 def getRecommendation(cosine_sim):
-    # book_idx와 전체 martix의 cosine 유사도에 해당하는 값과 index list로 반환
-    simScore = list(enumerate(cosine_sim[-1]))
-    # 유사도의 내림차순으로 정렬
-    simScore = sorted(simScore, key=lambda x: x[1], reverse=True)
-    # 가장 유사한 상위 10개 책
-    simScore = simScore[1:11]
-    # 10개 영화의 index
-    movieidx = [i[0] for i in simScore]
-    recBookList = df_book.iloc[movieidx]
+    simScore = list(
+        enumerate(cosine_sim[-1])
+    )  # book_idx와 전체 martix의 cosine 유사도에 해당하는 값과 index list로 반환
+    simScore = sorted(simScore, key=lambda x: x[1], reverse=True)  # 유사도의 내림차순으로 정렬
+    simScore = simScore[1:11]  # 가장 유사한 상위 10개 책
+    bookidx = [i[0] for i in simScore]  # 10개 책의 index
+    recBookList = df_book.iloc[bookidx]
     return recBookList
 
 
