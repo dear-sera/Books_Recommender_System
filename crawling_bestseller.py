@@ -1,11 +1,8 @@
 from bs4 import BeautifulSoup
-from urllib.request import urlopen
-import urllib.request as req
 import re
 import time
 import requests
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+
 
 
 def bestseller():
