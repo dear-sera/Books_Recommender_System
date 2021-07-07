@@ -1,0 +1,171 @@
+/* header blocks */
+
+.active-shape1 {
+  box-sizing: border-box;
+  outline: none;
+  margin: auto;
+}
+
+.header-blocks {
+  margin: 0 auto;
+  padding: 15px;
+  max-width: 1200px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+}
+.header-block-menu {
+  width: 30%;
+}
+
+.header-block-menu-ul {
+  align-content: flex-end;
+  list-style: none;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 0.9rem;
+  color: #fffcf0;
+}
+
+.header-block-menu-li {
+  margin-left: 10px;
+  float: left;
+}
+
+.header-block-title {
+  cursor: pointer;
+  text-align: center;
+  width: 40%;
+  font-family: "Permanent Marker", cursive;
+  font-size: 0.9rem;
+  color: #fbd14b;
+}
+
+.header-sign-menu {
+  width: 30%;
+}
+
+.header-sign-menu-ul {
+  align-content: flex-end;
+  list-style: none;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 0.9rem;
+  color: #fffcf0;
+  float: right;
+}
+.header-sign-menu-li {
+  margin-right: 10px;
+  float: left;
+}
+
+/* question block */
+.active-shape2 {
+  box-sizing: border-box;
+  outline: none;
+  margin: auto;
+}
+
+.question-blocks {
+  margin: 0 auto;
+  padding: 15px;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+}
+
+.question-text {
+  width: 100%;
+  vertical-align: middle;
+  border-radius: 3rem;
+  height: 3rem;
+  background-color: #dedcee;
+  text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
+  color: #353866;
+  line-height: 3rem;
+}
+
+/* imgages block */
+
+.active-shape3 {
+  box-sizing: border-box;
+  outline: none;
+  margin: auto;
+}
+.image-blocks {
+  margin: 0 auto;
+  padding: 15px;
+  max-width: 1200px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* footers block */
+
+.active-shape4 {
+  box-sizing: border-box;
+  outline: none;
+  margin: auto;
+}
+
+.footer-blocks {
+  margin: 0 auto;
+  padding: 15px;
+  max-width: 1200px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+}
+.footer-block1 {
+  width: 30%;
+}
+
+.footer-block-menu-ul {
+  align-content: flex-end;
+  list-style: none;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 0.9rem;
+  color: #dedcee;
+}
+
+.footer-block-menu-li {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+body {
+  margin: 0;
+  background: #6a60a9;
+}
+
+div {
+  display: block;
+}
+
+ul,
+ul.menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+a:link {
+  color: #fffcf0;
+}
+a:visited {
+  color: #fffcf0;
+}
+a:hover {
+  color: #fbd14b;
+}
+a:active {
+  color: #fbd14b;
+}
