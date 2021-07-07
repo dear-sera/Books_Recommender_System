@@ -2,7 +2,8 @@ from bs4 import BeautifulSoup
 import re
 import time
 import requests
-
+from urllib.request import urlopen
+# import dload
 
 
 def bestseller():
@@ -11,7 +12,6 @@ def bestseller():
     book_authors = []
     book_urls = []
 
-
     for n in range(1):
         req = requests.get(url)
         html = req.text
@@ -19,6 +19,7 @@ def bestseller():
         titles = soup.select('a.bo3 > b')
         authors = soup.select('a.bo3')
         urls = soup.select('a.bo3')
+        imgs = soup.select('img.i_cover')
 
         for i in titles:
             title = i.text
@@ -31,12 +32,20 @@ def bestseller():
             urls = i.get('href')
             book_urls.append(urls)
 
+        # # 책 이미지 크롤링
+        # n = 1
+        # for i in imgs:
+        #     img = i['src']
+        #     with urlopen(img) as f:
+        #         with open('/static/images/' + 'bestseller' + str(n) + '.jpg', 'wb') as h:
+        #             img = f.read()
+        #             h.write(img)
+        #         n += 1
+        #         if n > 10:
+        #             break
+    return book_titles, book_authors, book_urls
+bestseller()
+# BS = bestseller()
+# bs_titles = [BS[0][i] for i in range(10)]
+# print(bs_titles[0])
 
-    return  book_titles, book_authors, book_urls
-
-
-# print("2번째 작가:", bestseller()[1][1])
-#
-BS = bestseller()
-bs_titles = [BS[0][i] for i in range(10)]
-print(bs_titles[0])

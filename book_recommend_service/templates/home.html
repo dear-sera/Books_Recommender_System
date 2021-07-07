@@ -4,61 +4,70 @@
   <title>Book Recommender</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>-->
+<!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
 </head>
 <body>
 
-<div class="jumbotron text-center">
-  <h1>My First Book recommender</h1>
-  <p>도서 추천 웹 페이지 입니다.</p>
+<div class="home">
+  <h1>JASMINE</h1>
+  <p>Bookcommend Webpage</p>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 3</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
+<div class="search-container">
+    <div class="title-search">
+    <form id="title_search_form"  method="post">
+    {% csrf_token %}
+    <input id="title" type="text" placeholder="검색어를 입력하세요." name="title" >
+    <button class='button button1' type="submit" >검색</button>
+</form>
+  </div>
+
+   <div class="keyword-search">
+    <form id="keyword_search_form"  method="post">
+    {% csrf_token %}
+    <input id="keyword" type="text" placeholder="검색어를 입력하세요." name="keyword" >
+    <button class='button button1' type="submit" >검색</button>
+</form>
   </div>
 </div>
 
+
+ <div class="bestseller">
+   <h2>주간 베스트셀러 Top10</h2>
+  </div>
+
 <div class="grid-container">
-  <div class="bs_t1">
+   <div>
+    <img src="/static/images/bestseller1.jpg" width="80" height="100"><br>
     <span>1. </span><a href="{{bs_url1}}" target="_blank"> <font size='3em' color=black>
     {{bs_title1}} ({{bs_author1}})</font></a>
 <!--    <h4 align="center">{{bs_author1}}</h4>-->
   </div>
-  <div class="bs_t6">
+  <div>
+    <img src="/static/images/bestseller6.jpg" width="80" height="100"><br>
     <span>6. </span><a href="{{bs_url6}}" target="_blank"> <font size='3em' color=black>
     {{bs_title6}} ({{bs_author6}})</font></a>
   </div>
   <div>
+    <img src="/static/images/bestseller2.jpg" width="80" height="100"><br>
     <span>2. </span><a href="{{bs_url2}}" target="_blank"> <font size='3em' color=black>
     {{bs_title2}} ({{bs_author2}})</font></a>
   </div>
   <div>
+    <img src="/static/images/bestseller7.jpg" width="80" height="100"><br>
     <span>7. </span><a href="{{bs_url7}}" target="_blank"> <font size='3em' color=black>
     {{bs_title7}} ({{bs_author7}})</font></a>
   </div>
   <div>
+    <img src="/static/images/bestseller3.jpg" width="80" height="100"><br>
     <span>3. </span><a href="{{bs_url3}}" target="_blank"> <font size='3em' color=black>
     {{bs_title3}} ({{bs_author3}})</font></a>
   </div>
   <div>
+    <img src="/static/images/bestseller8.jpg" width="80" height="100"><br>
     <span>8. </span><a href="{{bs_url8}}" target="_blank"> <font size='3em' color=black>
     {{bs_title8}} ({{bs_author8}})</font></a>
   </div>
@@ -84,6 +93,29 @@
 </html>
 
 <style>
+.home{
+    border: 2px solid;
+    border-color: #7986CB;
+    background-color: #7986CB;
+    text-align: center;
+
+    margin-top: 50;
+    font-size: 40px;
+    font-family: "Georgia", Times, serif;
+    border-radius: 15px;
+}
+.search-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 100%;
+  margin-top:5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  grid-gap: 5%;
+  #background-color: #7986CB;
+  padding: 10px;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 49.5% 49.5%;
@@ -91,8 +123,9 @@
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 5%;
   grid-gap: 1%;
-  background-color: #A9A9A9;
+  background-color: #7986CB;
   padding: 10px;
 }
 
@@ -102,7 +135,46 @@
   padding: 20px 0;
   font-size: 30px;
 }
+
+
 span{
   font-size: 20px;
+}
+#title{
+   width: 400px;
+   height: 30px;
+   padding: 4px 16px;
+}
+
+#keyword{
+   width: 400px;
+   height: 30px;
+   padding: 4px 16px;
+}
+.button {
+  background-color: #7986CB;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #7986CB;
+}
+
+.button1:hover {
+  background-color: #7986CB;
+  color: white;
 }
 </style>
