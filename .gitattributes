@@ -15,4 +15,5 @@ web/backend/data/ filter=lfs diff=lfs merge=lfs -text
 *.vue filter=lfs diff=lfs merge=lfs -text
 *.png filter=lfs diff=lfs merge=lfs -text
 *.svg filter=lfs diff=lfs merge=lfs -text
+*.ts filter=lfs diff=lfs merge=lfs -text
 web/backend/data/** filter=lfs diff=lfs merge=lfs -text
