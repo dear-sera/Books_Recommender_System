@@ -63,6 +63,6 @@ print(df.head())
 print(df.info())
 
 #새 데이터프레임 만들어 저장하기
-df = df[['category', 'title', 'author', 'summary']]
+df = df[['category', 'title', 'author', 'summary', 'url']]
 print(df.info())
 df.to_csv('./crawling_data/cleaned_data.csv')
