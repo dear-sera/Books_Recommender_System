@@ -21,7 +21,6 @@
 }
 
 .header-block-menu-ul {
-  align-content: flex-end;
   list-style: none;
   font-family: "Noto Sans KR", sans-serif;
   font-size: 0.9rem;
@@ -47,16 +46,21 @@
 }
 
 .header-sign-menu-ul {
-  align-content: flex-end;
   list-style: none;
   font-family: "Noto Sans KR", sans-serif;
   font-size: 0.9rem;
-  color: #fffcf0;
   float: right;
 }
 .header-sign-menu-li {
   margin-right: 10px;
+  color: #fffcf0;
   float: left;
+}
+.header-sign-menu-li-background {
+  margin-right: 10px;
+  float: left;
+  color: #353866;
+  background-color: #fbd14b;
 }
 
 /* question block */
@@ -68,22 +72,36 @@
 
 .question-blocks {
   margin: 0 auto;
-  padding: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
   max-width: 1200px;
-  display: flex;
-  align-items: center;
 }
-
-.question-text {
-  width: 100%;
-  vertical-align: middle;
+.question-background {
   border-radius: 3rem;
   height: 3rem;
-  background-color: #dedcee;
+  background: #dedcee;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+}
+.question-empty {
+  width: 10%;
+}
+.question-text {
+  width: 80%;
   text-align: center;
   font-family: "Noto Sans KR", sans-serif;
   color: #353866;
   line-height: 3rem;
+}
+.material-icons-area {
+  width: 10%;
+}
+.material-icons {
+  float: right;
+  margin-right: 15px;
 }
 
 /* imgages block */
@@ -98,6 +116,7 @@
   padding: 15px;
   max-width: 1200px;
   align-items: center;
+  align-content: flex-end;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
