@@ -1,10 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>book_recommend</title>
+  <title>Book Recommender</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-new book recommend system!
+
+<div class="jumbotron text-center">
+  <h1>My First Book recommender</h1>
+  <p>도서 추천 웹 페이지 입니다.</p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Column 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 3</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+  </div>
+</div>
+
+<div class="grid-container">
+  <div class="bs_t1">
+    <span>1. </span><a href="{{bs_url1}}" target="_blank"> <font size='3em' color=black>
+    {{bs_title1}} ({{bs_author1}})</font></a>
+<!--    <h4 align="center">{{bs_author1}}</h4>-->
+  </div>
+  <div class="bs_t6">
+    <span>6. </span><a href="{{bs_url6}}" target="_blank"> <font size='3em' color=black>
+    {{bs_title6}} ({{bs_author6}})</font></a>
+  </div>
+  <div>
+    <span>2. </span><a href="{{bs_url2}}" target="_blank"> <font size='3em' color=black>
+    {{bs_title2}} ({{bs_author2}})</font></a>
+  </div>
+  <div>
+    <span>7. </span><a href="{{bs_url7}}" target="_blank"> <font size='3em' color=black>
+    {{bs_title7}} ({{bs_author7}})</font></a>
+  </div>
+  <div>
+    <span>3. </span><a href="{{bs_url3}}" target="_blank"> <font size='3em' color=black>
+    {{bs_title3}} ({{bs_author3}})</font></a>
+  </div>
+  <div>
+    <span>8. </span><a href="{{bs_url8}}" target="_blank"> <font size='3em' color=black>
+    {{bs_title8}} ({{bs_author8}})</font></a>
+  </div>
+  <div>
+    <span>4. </span><a href="{{bs_url4}}" target="_blank"> <font size='3em' color=black>
+    {{bs_title4}} ({{bs_author4}})</font></a>
+  </div>
+  <div>
+    <span>9. </span><a href="{{bs_url9}}" target="_blank"> <font size='3em' color=black>
+    {{bs_title9}} ({{bs_author9}})</font></a>
+  </div>
+  <div>
+    <span>5. </span><a href="{{bs_url5}}" target="_blank"> <font size='3em' color=black>
+    {{bs_title5}} ({{bs_author5}})</font></a>
+  </div>
+  <div>
+    <span>10. </span><a href="{{bs_url10}}" target="_blank"> <font size='3em' color=black>
+    {{bs_title10}} ({{bs_author10}})</font></a>
+  </div>
+</div>
+
 </body>
 </html>
+
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: 49.5% 49.5%;
+  #grid-template-rows: 32% 32% 32%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  grid-gap: 1%;
+  background-color: #A9A9A9;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+span{
+  font-size: 20px;
+}
+</style>
