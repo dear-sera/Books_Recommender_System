@@ -15,4 +15,4 @@ for file in files:
 
 print(df.info())
 
-df.to_csv("./crawling_data/all_raw_data.csv", index=False)
+df.to_csv("./crawling_data/img_data.csv", index=False)
