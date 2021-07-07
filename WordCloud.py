@@ -24,7 +24,7 @@ df.dropna(inplace=True)
 print(df.head(20))
 print(df.info())
 
-book_index = df[df['title'] == '황성주 박사의 생식과 건강'].index[0]
+book_index = df[df['title'] == '북유럽 생활소품'].index[0]
 print(book_index)
 print(df.summary[book_index])
 words = df.summary[book_index].split(' ')

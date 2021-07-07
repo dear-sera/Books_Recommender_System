@@ -45,7 +45,7 @@ def getRecommendation(cosine_sim):
 
 #2) 키워드를 입력하고 추천받기
 embedding_model = Word2Vec.load("./models/word2VecModel.model")
-key_word = '파이썬'
+key_word = '여름'
 sentence = [key_word] * 10
 if key_word in embedding_model.wv.index_to_key:
     sim_word = embedding_model.wv.most_similar(key_word, topn=10)
