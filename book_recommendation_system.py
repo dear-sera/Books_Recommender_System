@@ -57,7 +57,7 @@ if key_word in embedding_model.wv.index_to_key:  #모델에 키 단어가 있다
 sentence = ' '.join(sentence)  #출력 단어들을 한 줄로 합치기
 print(sentence)
 
-sentence_vec = Tfidf.transform([sentence])  #단어를 tfidf에 합습시키기
+sentence_vec = Tfidf.transform([sentence])  #단어를 tfidf에 합슥시키기
 cosine_sim = linear_kernel(sentence_vec, Tfidf_matrix)  #점수표에서 해당 단어와 유사한 점수 선택
 
 recommendataion = getRcommendation(cosine_sim)  #단어와 유사한 도서 추천
