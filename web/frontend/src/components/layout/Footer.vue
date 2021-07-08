@@ -1,3 +1,49 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5200fc6ec99dc7b5a9e2dd23d0ace45fea7db784a482db9cc7e710d34c34f895
-size 1635
+<template>
+  <v-layout align-center justify-center fill-width>
+    <v-footer dark padless style="max-width: 1185px">
+      <v-card flat tile class="grey darken-4 white--text text-center">
+        <v-card-text>
+          <v-btn
+            v-for="icon in icons"
+            :key="icon"
+            class="mx-4 white--text"
+            icon
+          >
+            <v-icon size="24px">
+              {{ icon }}
+            </v-icon>
+          </v-btn>
+        </v-card-text>
+
+        <v-card-text class="white--text pt-0">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dicta
+          amet voluptas exercitationem eos autem, soluta qui quaerat rem velit
+          ea natus sapiente ab repellendus maxime nostrum ut dolore cum. Lorem
+          ipsum dolor, sit amet consectetur adipisicing elit. Quidem dicta amet
+          voluptas exercitationem eos autem, soluta qui quaerat rem velit ea
+          natus sapiente ab repellendus maxime nostrum ut dolore cum. Lorem
+          ipsum dolor, sit amet consectetur adipisicing elit. Quidem dicta amet
+          voluptas exercitationem eos autem, soluta qui quaerat rem velit ea
+          natus sapiente ab repellendus maxime nostrum ut dolore cum.
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-text class="white--text">
+          {{ new Date().getFullYear() }} — <strong>천김박조심</strong>
+        </v-card-text>
+      </v-card>
+    </v-footer></v-layout
+  >
+</template>
+
+<script>
+export default {
+  data: () => ({
+    icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
+  }),
+};
+</script>
+
+<style>
+</style>

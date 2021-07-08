@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3759146d1bf2b8b86349beb4d441513a0f5d3f2e59a62e9f29b82617773c2895
-size 1024
+from api.models.best import Bestseller
+from api.serializers.best import BestsellerSerializer
+from api.views.bestseller import Best
+from rest_framework import viewsets
+from rest_framework.decorators import action
+from rest_framework.response import Response
+from tqdm import tqdm
+
+
+class BestsellerModelViewSet(viewsets.ModelViewSet):
+    queryset = Bestseller.objects.all()
+    serializer_class = BestsellerSerializer
+
+    @action(detail=False, methods=["get"])
+    def updateBests(self, request):
+        b = Best()
+        flags = b.url.keys()
+        Bestseller.objects.all().delete()
+        for f in flags:
+            b.crawling(f)
+        titles, authors, urls, images, flags = b.get_values()
+        print(flags)
+        bulk_list = [
+            Bestseller(title=title, author=author, url=url, image=image, flag=flag)
+            for title, author, url, image, flag in zip(titles, authors, urls, images, flags)
+        ]
+        Bestseller.objects.bulk_create(bulk_list)
+        return Response({"str": "success"})

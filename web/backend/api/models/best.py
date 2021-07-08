@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:431f736f16d489380236e3bd1dda029a748b465de7d3167eedbd7477d6b1bb5c
-size 326
+from django.db import models
+
+# Create your models here.
+class Bestseller(models.Model):
+    title = models.CharField(max_length=100)
+    author = models.CharField(max_length=100)
+    flag = models.CharField(max_length=10)
+    url = models.TextField()
+    image = models.TextField()
+    date = models.DateField(auto_now=True)

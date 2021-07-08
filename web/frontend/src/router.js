@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0aca15095bb7553709ae6afc256811befe32dd69900b64e40001884a78a6ca25
-size 517
+import Vue from "vue";
+import VueRouter from "vue-router";
+import BestList from "./views/BestList.vue";
+import PredictedList from "./views/PredictedList.vue";
+import UpdateBooks from "./views/UpdateBooks.vue"
+
+Vue.use(VueRouter)
+
+export default new VueRouter({
+    mode: "history",
+    routes: [
+        { path: "/", name: 'Main', component: BestList },
+        { path: "/predict", name: 'Predict', component: PredictedList, props: true },
+        { path: "/update", name: 'Update', component: UpdateBooks },
+    ]
+})

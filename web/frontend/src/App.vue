@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:05571da6bb6d36d7e941481d1f9d7fb9621e0132b60fc5bb3d0f936200e3f56b
-size 866
+<template>
+  <v-app id="app" style="background-color: #212121">
+    <layout-header app></layout-header>
+    <book-searchbar></book-searchbar>
+    <v-main id="content" class="content">
+      <router-view style="max-width: 1185px"></router-view>
+    </v-main>
+    <layout-footer app></layout-footer>
+  </v-app>
+</template>
+
+<script>
+// import axios from "axios";
+import Header from "./components/layout/Header.vue";
+import BookSearchBar from "./views/BookSearchBar.vue";
+import Footer from "./components/layout/Footer.vue";
+
+// let url = "http://localhost:8000/api/book/"; // drf server addr
+
+export default {
+  data: () => {
+    return {
+      bookList: [],
+    };
+  },
+  created() {
+    document.title = "Jasmine";
+  },
+  components: {
+    "layout-header": Header,
+    "book-searchbar": BookSearchBar,
+    "layout-footer": Footer,
+  },
+};
+</script>
+
+<style>
+</style>
