@@ -1,4 +1,4 @@
-/* header blocks */
+/*------------- header blocks -------------*/
 
 .active-shape1 {
   box-sizing: border-box;
@@ -8,7 +8,7 @@
 
 .header-blocks {
   margin: 0 auto;
-  padding: 15px;
+  padding: 25px;
   max-width: 1200px;
   align-items: center;
   display: flex;
@@ -26,9 +26,13 @@
   font-size: 0.9rem;
   color: #fffcf0;
 }
+.header-block-menu-ul .header-block-menu-li .flower {
+  margin-right: 0px;
+  line-height: 20px;
+}
 
 .header-block-menu-li {
-  margin-left: 10px;
+  margin-left: 15px;
   float: left;
 }
 
@@ -37,7 +41,6 @@
   text-align: center;
   width: 40%;
   font-family: "Permanent Marker", cursive;
-  font-size: 0.9rem;
   color: #fbd14b;
 }
 
@@ -51,19 +54,43 @@
   font-size: 0.9rem;
   float: right;
 }
-.header-sign-menu-li {
-  margin-right: 10px;
-  color: #fffcf0;
-  float: left;
-}
-.header-sign-menu-li-background {
-  margin-right: 10px;
-  float: left;
-  color: #353866;
-  background-color: #fbd14b;
+
+.header-sign-menu-ul::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
-/* question block */
+.header-block-menu-li:first-child {
+  margin-right: 0px;
+}
+
+.header-sign-menu-ul::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.header-sign-menu-ul li {
+  float: left;
+  margin-right: 10px;
+  color: #fffcf0;
+  /* color: #FBD14B; */
+}
+
+.header-sign-menu-ul li:last-child {
+  color: #fffcf0;
+  background: #353866;
+  border-radius: 70%;
+  line-height: 24px;
+  padding: 0px 10px 1px;
+  transition: 0.3s;
+}
+.header-sign-menu-ul li:last-child:hover {
+  background: #fbd14b;
+  color: #fffcf0;
+}
+
+/*------------- question block -------------*/
 .active-shape2 {
   box-sizing: border-box;
   outline: none;
@@ -75,8 +102,11 @@
   padding-right: 15px;
   padding-left: 15px;
   max-width: 1200px;
+  cursor: pointer;
 }
 .question-background {
+  margin-left: 10px;
+  margin-right: 10px;
   border-radius: 3rem;
   height: 3rem;
   background: #dedcee;
@@ -100,12 +130,12 @@
   width: 10%;
 }
 .material-icons {
+  vertical-align: bottom;
   float: right;
   margin-right: 15px;
 }
 
-/* imgages block */
-
+/*------------- imgages block -------------*/
 .active-shape3 {
   box-sizing: border-box;
   outline: none;
@@ -123,8 +153,7 @@
   position: relative;
 }
 
-/* footers block */
-
+/*------------- footers block -------------*/
 .active-shape4 {
   box-sizing: border-box;
   outline: none;
@@ -162,6 +191,11 @@ body {
   margin: 0;
   background: #6a60a9;
 }
+h1 {
+  margin-bottom: 0;
+  font-weight: 400;
+  line-height: 1.2;
+}
 
 div {
   display: block;
@@ -184,7 +218,9 @@ a:visited {
 }
 a:hover {
   color: #fbd14b;
+  transition: 0.5s;
 }
 a:active {
   color: #fbd14b;
+  transition: 0.5s;
 }
