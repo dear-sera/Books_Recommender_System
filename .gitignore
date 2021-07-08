@@ -2,7 +2,7 @@ size 12
 __pycache__/
 *.pyc
 
-data/
+
 .vscode/
 db.sqlite3
 venv/
