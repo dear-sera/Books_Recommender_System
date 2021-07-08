@@ -1,4 +1,4 @@
-<div class="active space1">
+<section class="active space1">
     <div class="header-blocks">
         <div class="header-block-menu">
             <div class="header-block-menu-ul">
@@ -14,26 +14,30 @@
             </div>
 
         </div>
-
         <div class="header-block-title" onclick="window.location.href='https://naver.com/';">
             <h1>JASMINE</h1>
         </div>
 
         <div class="header-sign-menu">
             <ul class="header-sign-menu-ul">
-                <li class="header-sign-menu-li">login</li>
-                <li class="header-sign-menu-li-background">Signup</li>
+                <li class="header-sign-menu-li"><a href="#">
+                        <span class="material-icons outlined">
+                            person
+                        </span>
+                    </a>
+                </li>
+                <li class="header-sign-menu-li"><a href="#">login</a></li>
+                <li class="header-sign-menu-li">Signup</li>
             </ul>
         </div>
     </div>
     <div class="active space2">
-        <div class="question-blocks" onclick="window.location.href='https://google.com/';">
+        <div class="question-blocks">
             <div class="question-background">
                 <div class="question-empty">
                 </div>
-                <div class="question-text">
-                    What are you searching for?
-                </div>
+                <input type="text" name="book_input" class="question-text" placeholder="What are you searching for?"
+                    onclick="this.placeholder=''" onblur="this.placeholder='what are you searching for?'">
                 <div class="material-icons-area">
                     <span class="material-icons">
                         search
@@ -42,4 +46,4 @@
             </div>
         </div>
     </div>
-</div>
+</section>
