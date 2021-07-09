@@ -1,81 +1,82 @@
 <template>
   <v-container class="py-5">
-    <v-card class="roundedbox" color="#ffffff00" elevation="11">
-      <v-img
-        gradient="to bottom left, rgba(255,255,255,.33), rgba(255,255,255,.7)"
-        class="pb-10"
-      >
-        <div v-for="(best, i) in bests" :key="i">
-          <div class="whiteopactiy" style="padding-left: 68px">
-            <h2 style="padding-top: 40px">{{ best[0].flag }} bestseller</h2>
-            <p class="mb-0">updated {{ best[0].date }}</p>
-          </div>
-          <v-sheet elevation="0" class="py-5" color="#ffffff00">
-            <v-slide-group class="pa-4" show-arrows>
-              <v-slide-item v-for="(book, i) in best" :key="book.id">
-                <v-hover
-                  style="max-width: 250px; margin: 2px"
-                  v-slot:default="{ hover }"
-                >
-                  <v-card color="#ffffff50" flat>
-                    <v-img
+    <v-card class="roundedbox pa-0 pb-10" color="#ffffff00" flat>
+      <div v-for="(best, i) in bests" :key="i">
+        <div class="whiteopactiy" style="padding-left: 68px">
+          <h2 style="padding-top: 40px" class="blackcolor">
+            {{ best[0].flag }} bestseller
+          </h2>
+          <p class="mb-0 blackcolor">updated {{ best[0].date }}</p>
+        </div>
+        <v-sheet elevation="0" class="py-5" color="#ffffff00">
+          <v-slide-group class="pa-4" show-arrows>
+            <v-slide-item v-for="(book, i) in best" :key="book.id">
+              <v-hover
+                style="max-width: 250px; margin: 2px"
+                v-slot:default="{ hover }"
+              >
+                <v-card color="#ffffff50" flat>
+                  <v-img
+                    class="white--text"
+                    :src="book.image"
+                    height="40vh"
+                    gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                  >
+                    <v-layout
+                      column
+                      align-left
+                      justify-end
                       class="white--text"
-                      :src="book.image"
-                      height="40vh"
-                      gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                      fill-height
                     >
-                      <v-layout
-                        column
-                        align-left
-                        justify-end
-                        class="white--text"
-                        fill-height
+                      <h1
+                        class="
+                          white--text
+                          font-weight-bold
+                          ma-2
+                          display-2
+                          text-left
+                        "
                       >
-                        <h1
-                          class="
-                            white--text
-                            font-weight-bold
-                            ma-2
-                            display-2
-                            text-left
-                          "
-                        >
-                          {{ i + 1 }}
-                        </h1>
-                      </v-layout>
-                    </v-img>
+                        {{ i + 1 }}
+                      </h1>
+                    </v-layout>
+                  </v-img>
+                  <v-img
+                    gradient="to bottom right, rgba(255,255,255,.3), rgba(255,255,255,.5)"
+                  >
                     <v-card-title class=""
-                      ><div class="headerClass">
+                      ><div class="headerClass blackcolor">
                         {{ book.title }}
                       </div></v-card-title
                     >
 
-                    <v-card-subtitle class="pb-0">
+                    <v-card-subtitle class="pb-0 blackcolor">
                       {{ book.author }}
                     </v-card-subtitle>
 
                     <v-card-text class="text--primary">
                       <div>{{ book.summary }}</div>
                     </v-card-text>
-                    <v-fade-transition>
-                      <v-overlay
-                        v-if="hover"
-                        absolute
-                        color="#ffffff"
-                        opacity="0.8"
+                  </v-img>
+                  <v-fade-transition>
+                    <v-overlay
+                      v-if="hover"
+                      absolute
+                      color="#ffffff"
+                      opacity="0.8"
+                    >
+                      <v-btn @click="openDetail(book.url)" color="#262258"
+                        >See more info</v-btn
                       >
-                        <v-btn @click="openDetail(book.url)" color="#262258"
-                          >See more info</v-btn
-                        >
-                      </v-overlay>
-                    </v-fade-transition>
-                  </v-card>
-                </v-hover>
-              </v-slide-item>
-            </v-slide-group>
-          </v-sheet>
-        </div>
-      </v-img>
+                    </v-overlay>
+                  </v-fade-transition>
+                </v-card>
+              </v-hover>
+            </v-slide-item>
+          </v-slide-group>
+        </v-sheet>
+      </div>
     </v-card>
   </v-container>
 </template>
@@ -138,5 +139,15 @@ whiteopactiy * {
 }
 .roundedbox {
   border-radius: 50px !important;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.7)
+  );
+  box-shadow: 10px 10px 40px #26225881 !important;
+  backdrop-filter: blur(1rem);
+}
+.blackcolor {
+  color: #171538;
 }
 </style>
