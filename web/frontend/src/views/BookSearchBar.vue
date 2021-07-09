@@ -14,7 +14,7 @@
             solo
             clearable
             v-model="target"
-            color="teal accent-4"
+            color="yellow"
             :rules="custom_rules"
             @keydown.enter.prevent="[sendTarget(), (overlay = !overlay)]"
           >

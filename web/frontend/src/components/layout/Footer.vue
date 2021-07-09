@@ -1,7 +1,7 @@
 <template>
-  <v-layout align-center justify-center fill-width>
+  <v-layout align-center justify-center fill-width class="mt-16">
     <v-footer dark padless style="max-width: 1185px">
-      <v-card flat tile class="grey darken-4 white--text text-center">
+      <v-card flat tile class="zeroopacity white--text text-center">
         <v-card-text>
           <v-btn
             v-for="icon in icons"
@@ -46,4 +46,8 @@ export default {
 </script>
 
 <style>
+footer,
+footer * {
+  background-color: #fffcf000 !important;
+}
 </style>

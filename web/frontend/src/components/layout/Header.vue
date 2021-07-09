@@ -2,7 +2,7 @@
   <header>
     <center>
       <h1>
-        <router-link to="/" class="test teal--text text--accent-2"
+        <router-link to="/" class="test amber--text text--accent-2"
           >Jasmine</router-link
         >
       </h1>
