@@ -1,0 +1,9 @@
+size 12
+__pycache__/
+*.pyc
+
+
+.vscode/
+db.sqlite3
+venv/
+.Python
